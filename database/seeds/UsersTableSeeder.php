@@ -2,6 +2,7 @@
 
 use App\Address;
 use App\User;
+use Artesaos\Defender\Role;
 use Illuminate\Database\Seeder;
 
 class UsersTableSeeder extends Seeder
@@ -13,17 +14,24 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(User::class)->create([
+        factory(User::class, 1)->create([
             'name' => 'Admin',
             'email' => 'admin@admin.com',
             'password' => bcrypt(123456),
-        ])->address()->save(factory(Address::class)->make());
+        ])->each(function(User $user){
+            $user->address()->save(factory(Address::class)->make(['number' => '2222222']));
+            $user->roles()->save(factory(Role::class)->make());
+        });
 
-        factory(User::class)->create([
+
+        factory(User::class, 1)->create([
             'name' => 'User',
             'email' => 'user@user.com',
             'password' => bcrypt(123456),
-        ])->address()->save(factory(Address::class)->make());
+        ])->each(function(User $u){
+            $u->address()->save(factory(Address::class)->make(['number' => '3333333']));
+            $u->roles()->save(factory(Role::class)->make(['name' => 'User']));
+        });
 
         factory(User::class,8)->create()->each(function(User $user){
             $user->address()->save(factory(Address::class)->make());

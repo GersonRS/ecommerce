@@ -9,11 +9,17 @@ class Category extends Model
     protected $fillable = [
         'name',
         'description',
-        'image'
+        'image',
+        'active'
     ];
 
     public function products()
     {
         return $this->hasMany(Product::Class);
+    }
+
+    public function establishment()
+    {
+        return $this->belongsTo(Establishment::class);
     }
 }

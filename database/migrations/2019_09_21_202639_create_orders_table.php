@@ -18,7 +18,7 @@ class CreateOrdersTable extends Migration
             $table->decimal('total');
             $table->text('comment')->nullable();
             $table->decimal('pay');
-            $table->smallInteger('status')->default(0);
+            $table->enum('status', ['waiting','accept', 'doing', 'delivering'])->default('waiting');
             $table->string('hash')->nullable();
             $table->unsignedBigInteger('address_id');
             $table->foreign('address_id')->references('id')->on('addresses')->onDelete('cascade');

@@ -14,11 +14,20 @@
 use App\Http\Resources\UserCollection;
 use App\Http\Resources\UserResource;
 use App\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'WelcomeController@index')->name('welcome');
+
+Route::namespace('API')->group(function () {
+    Route::get('/promotions', 'ProductController@promotions')->name('promotions');
+});
+
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('{path}','HomeController@index')->where('path','([A-z\d-\/_.]+)?');
+Route::get('/cart', 'CartController@index')->name('cart');
+
+Route::get('/dashboard','HomeController@index')->where('path','([A-z\d-\/_.]+)?');

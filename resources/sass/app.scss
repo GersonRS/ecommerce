@@ -11,10 +11,8 @@ $fa-font-path: "../webfonts";
 @import "~@fortawesome/fontawesome-free/scss/fontawesome";
 @import "~@fortawesome/fontawesome-free/scss/solid";
 @import "~@fortawesome/fontawesome-free/scss/brands";
-
+@import "~slick-carousel/slick/slick";
+@import "~slick-carousel/slick/slick-theme";
 @import '~bootstrap-vue/src/index';
 
-.router-link-exact-active{
-    background-color: red !important;
-    color: #fff !important;
-}
+@import "main";

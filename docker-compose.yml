@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  
+  #MySQL (5.7)
+  db:
+    image: mysql:5.7
+    container_name: mysql
+    volumes:
+      - .docker/dbdata:/var/lib/mysql
+    environment: 
+      MYSQL_DATABASE: ecommerce
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_USER: gerson
+      MYSQL_PASSWORD: 123456
+    networks: 
+      - app-network
+
+  #PHP (with ngnix)
+  laravel:
+    image: ambientum/php:7.2-nginx
+    container_name: laravel
+    volumes:
+      - .:/var/www/app
+    ports:
+      - "8080:8080"
+    networks: 
+      - app-network
+
+networks: 
+  app-network:
+    driver: bridge

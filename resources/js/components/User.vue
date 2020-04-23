@@ -68,7 +68,7 @@
                             <p class="mb-0"><strong>Whoops!</strong> Something went wrong!</p>
                             <br>
                             <ul>
-                                <li v-for="error in createForm.errors">
+                                <li v-for="error in createForm.errors" v-bind:key="error">
                                     {{ error }}
                                 </li>
                             </ul>
@@ -148,7 +148,7 @@
                             <p class="mb-0"><strong>Whoops!</strong> Something went wrong!</p>
                             <br>
                             <ul>
-                                <li v-for="error in editForm.errors">
+                                <li v-for="error in editForm.errors" v-bind:key="error">
                                     {{ error }}
                                 </li>
                             </ul>

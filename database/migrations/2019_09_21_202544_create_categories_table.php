@@ -18,6 +18,10 @@ class CreateCategoriesTable extends Migration
             $table->string('name');
             $table->text('description');
             $table->string('image');
+            $table->boolean('active')->default(false);
+            $table->integer('order')->autoIncrement();
+            $table->unsignedBigInteger('establishment_id');
+            $table->foreign('establishment_id')->references('id')->on('establishments')->onDelete('cascade');
             $table->timestamps();
         });
     }

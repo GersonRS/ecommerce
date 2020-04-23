@@ -2,18 +2,28 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Carbon\Carbon;
+use Faker\Factory;
+use Illuminate\Contracts\Support\Renderable;
+
 
 class WelcomeController extends Controller
 {
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
     public function index()
     {
+//        $faker = Factory::create();
+//        $hours = Carbon::createFromTimeString($faker->time(), 'Europe/London');
+//        $time = $faker->unixTime;
+//        return [
+//            date('H:i:s', time()),
+//            date('H:i:s', (time() + (60 * 60 * 8))),
+//            date('H:i', strtotime($hours)),
+//            date('H:i', strtotime($hours->addHours(8))),
+//            $faker->unixTime,
+//            time(),
+//            date('H:i:s', $time),
+//            date('H:i:s', ($time + (60 * 60 * 8)))];
         return view('welcome');
     }
 

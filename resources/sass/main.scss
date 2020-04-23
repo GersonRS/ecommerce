@@ -1,0 +1,32 @@
+.router-link-exact-active{
+    background-color: red !important;
+    color: #fff !important;
+}
+
+.control-sidebar, .control-sidebar::before {
+    width: 400px;
+}
+
+
+.main-header {
+    margin-left: 0px;
+    z-index: 3000;
+}
+
+
+.control-sidebar {
+    position: absolute;
+    top: 80px;
+    z-index: 1031;
+}
+
+.control-sidebar, .control-sidebar::before {
+    display: none;
+    right: -250px;
+    width: 400px;
+    transition: right 0.3s ease-in-out, display 0.3s ease-in-out;
+}
+
+.cart {
+    width: 500px;
+}

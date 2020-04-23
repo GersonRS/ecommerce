@@ -1,11 +1,12 @@
 <?php
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
+/** @var Factory $factory */
 
 use App\Address;
 use App\Establishment;
 use App\Order;
 use Faker\Generator as Faker;
+use Illuminate\Database\Eloquent\Factory;
 
 $factory->define(Order::class, function (Faker $faker) {
     return [
@@ -13,6 +14,6 @@ $factory->define(Order::class, function (Faker $faker) {
         'establishment_id' => Establishment::all()->random()->id,
         'total' => $faker->randomFloat(2, 50, 250),
         'pay' => $faker->randomFloat(2, 50, 250),
-        'status' => 0
+        'status' => $faker->randomElement(['waiting','accept', 'doing', 'delivering'])
     ];
 });

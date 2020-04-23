@@ -19,10 +19,10 @@ class CreateProductsTable extends Migration
             $table->text('description');
             $table->decimal('price');
             $table->string('image');
+            $table->boolean('active')->default(false);
+            $table->integer('order')->autoIncrement();
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
-            $table->unsignedBigInteger('establishment_id');
-            $table->foreign('establishment_id')->references('id')->on('establishments')->onDelete('cascade');
             $table->timestamps();
         });
     }

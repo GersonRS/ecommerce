@@ -6,13 +6,19 @@
         "framework",
         "laravel"
     ],
+    "repositories": [
+        { "type": "vcs", "url": "https://github.com/melihovv/laravel-shopping-cart" }
+    ],
     "license": "MIT",
     "require": {
         "php": "^7.2",
+        "artesaos/defender": "^0.9.0",
         "fideloper/proxy": "^4.0",
+        "fruitcake/laravel-cors": "^1.0",
         "laravel/framework": "^6.0",
         "laravel/passport": "^7.4",
-        "laravel/tinker": "^1.0"
+        "laravel/tinker": "^1.0",
+        "melihovv/laravel-shopping-cart": "^6.0"
     },
     "require-dev": {
         "facade/ignition": "^1.4",

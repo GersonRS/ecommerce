@@ -16,16 +16,16 @@ class CreateEstablishmentsTable extends Migration
         Schema::create('establishments', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('name_label');
-            $table->float('lat', 8, 6);
-            $table->float('lng', 8, 6);
-            $table->string('website');
-            $table->string('mail');
+            $table->string('description');
+            $table->enum('type', ['restaurant', 'lunch', 'marketplace', 'drugstore']);
             $table->string('address');
+            $table->integer('number');
             $table->string('phone');
             $table->string('thumbnail');
             $table->string('image');
-            $table->boolean('active');
+            $table->decimal('delivery_fee',4,2);
+            $table->decimal('minimum_value',4,2);
+            $table->boolean('active')->default(false);
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();

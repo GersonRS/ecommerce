@@ -6,6 +6,10 @@
 
 require('./bootstrap');
 
+require('slick-carousel/slick/slick');
+
+require('./main');
+
 window.Vue = require('vue');
 
 import { Form, HasError, AlertError } from 'vform'
@@ -56,4 +60,86 @@ Vue.component('passport-personal-access-tokens', require('./components/passport/
 const app = new Vue({
     el: '#app',
     router
+});
+
+$('.carousel-main').slick({
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    responsive: [
+        {
+            breakpoint: 1200,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                infinite: true,
+            }
+        },
+        {
+            breakpoint: 990,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+    ]
+});
+
+$(".carousel-center").slick({
+    infinite: false,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    responsive: [
+        {
+            breakpoint: 768,
+            settings: {
+                arrows: false,
+                centerPadding: '40px',
+                slidesToShow: 3
+            }
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                arrows: false,
+                centerPadding: '40px',
+                slidesToShow: 1
+            }
+        }
+    ]
+});
+
+$(".carousel-category").slick({
+    centerMode: true,
+    centerPadding: '10px',
+    infinite: true,
+    slidesToShow: 10,
+    slidesToScroll: 1,
+    responsive: [
+        {
+            breakpoint: 768,
+            settings: {
+                arrows: false,
+                centerPadding: '10px',
+                slidesToShow: 3
+            }
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                arrows: false,
+                centerPadding: '10px',
+                slidesToShow: 1
+            }
+        }
+    ]
+});
+
+$('.dropdown-menu').on("click", function(e){
+    e.stopPropagation();
 });

@@ -3,7 +3,12 @@
 namespace App\Exceptions;
 
 use Exception;
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class Handler extends ExceptionHandler
 {
@@ -40,12 +45,32 @@ class Handler extends ExceptionHandler
     /**
      * Render an exception into an HTTP response.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  Request  $request
      * @param  \Exception  $exception
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Response|Response
      */
     public function render($request, Exception $exception)
     {
+        // Not found exception handler
+        if($exception instanceof NotFoundHttpException) {
+            return response()->json([
+                'error' => [
+                    'description' => 'Invalid URI',
+                    'messages' => $exception->getMessage()
+                ]
+            ], 404);
+        }
+
+        // Method not allowed exception handler
+        if($exception instanceof MethodNotAllowedHttpException) {
+            return response()->json([
+                'error' => [
+                    'description' => 'Method Not Allowed',
+                    'messages' => $exception->getMessage()
+                ]
+            ], 405);
+        }
+
         return parent::render($request, $exception);
     }
 }

@@ -1,23 +1,25 @@
 <?php
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
+/** @var Factory $factory */
 
 use App\Establishment;
+use App\User;
 use Faker\Generator as Faker;
+use Illuminate\Database\Eloquent\Factory;
 
 $factory->define(Establishment::class, function (Faker $faker) {
     return [
-        'user_id' => $faker->numberBetween(1, 10),
+        'user_id' => User::all()->random()->id,
         'name' => $faker->company,
-        'name_label' => $faker->companySuffix,
-        'lat' => $faker->randomFloat(6, -72, -34),
-        'lng' => $faker->randomFloat(6, -32, 4),
-        'website' => $faker->domainName,
-        'mail' => $faker->companyEmail,
+        'description' => $faker->sentence,
+        'type' => $faker->randomElement(['restaurant', 'lunch', 'marketplace', 'drugstore']),
         'address' => $faker->address,
+        'number' => $faker->randomDigit,
         'phone' => $faker->phoneNumber,
         'image' =>$faker->imageUrl(640,480,'business',true,'Faker'),
         'thumbnail' =>$faker->imageUrl(200,200,'business',true,'Faker'),
+        'delivery_fee' =>$faker->randomFloat(2, 4, 8),
+        'minimum_value' =>$faker->randomFloat(2, 10, 20),
         'active' => $faker->boolean(100)
     ];
 });

@@ -18,7 +18,7 @@ class CreateCouponsTable extends Migration
             $table->string('code');
             $table->decimal('value');
             $table->enum('type', ['percent', 'fixed']);
-            $table->boolean('used')->default(0);
+            $table->boolean('used')->default(false);
             $table->unsignedBigInteger('establishment_id');
             $table->foreign('establishment_id')->references('id')->on('establishments')->onDelete('cascade');
             $table->timestamps();

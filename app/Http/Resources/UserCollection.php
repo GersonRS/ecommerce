@@ -6,8 +6,6 @@ use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class UserCollection extends ResourceCollection
 {
-
-    public $collects = 'App\Http\Resources\UserResource';
     /**
      * Transform the resource collection into an array.
      *
@@ -17,11 +15,19 @@ class UserCollection extends ResourceCollection
     public function toArray($request)
     {
         return [
-            'data' => $this->collection,
+            'data' => UserResource::collection($this),
             'links' => [
                 'self' => 'link-value',
             ],
         ];
-//        return parent::toArray($request);
+    }
+
+    public function with($request)
+    {
+        return [
+            'meta' => [
+                'key' => 'value',
+            ],
+        ];
     }
 }

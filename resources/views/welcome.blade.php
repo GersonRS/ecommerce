@@ -1,100 +1,373 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
+@section('content')
+    <div class="row my-3">
+        <div class="container">
+            <div class="carousel-main my-3">
+                <div class="mx-auto">
+                    <img class="rounded mx-auto d-block" src="http://placehold.it/350x200?text=1"/>
+                    <h4 class="mx-2 my-1">Pratos com entrega grátis</h4>
+                    <p class="mx-2 my-1">Comida gostosa sem taxas</p>
+                    <a href="#" class="stretched-link"></a>
                 </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
+                <div class="mx-auto">
+                    <img class="rounded mx-auto d-block" src="http://placehold.it/350x200?text=2"/>
+                    <h4 class="mx-2 my-1">Pratos com entrega grátis</h4>
+                    <p class="mx-2 my-1">Comida gostosa sem taxas</p>
+                    <a href="#" class="stretched-link"></a>
                 </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div class="mx-auto">
+                    <a href="#">
+                        <img class="rounded mx-auto d-blockl" src="http://placehold.it/350x200?text=3"/>
+                        <h4 class="mx-2 my-1">Pratos com entrega grátis</h4>
+                        <p class="mx-2 my-1">Comida gostosa sem taxas</p>
+                    </a>
+                </div>
+                <div class="mx-auto">
+                    <a href="#">
+                        <img class="rounded" src="http://placehold.it/350x200?text=4"/>
+                        <h4 class="mx-2 my-1">Pratos com entrega grátis</h4>
+                        <p class="mx-2 my-1">Comida gostosa sem taxas</p>
+                    </a>
+                </div>
+                <div class="mx-auto">
+                    <a href="#">
+                        <img class="rounded mx-auto d-block" src="http://placehold.it/350x200?text=5"/>
+                        <h4 class="mx-2 my-1">Pratos com entrega grátis</h4>
+                        <p class="mx-2 my-1">Comida gostosa sem taxas</p>
+                    </a>
+                </div>
+                <div class="mx-auto">
+                    <a href="#">
+                        <img class="rounded mx-auto d-block" src="http://placehold.it/350x200?text=6"/>
+                        <h4 class="mx-2 my-1">Pratos com entrega grátis</h4>
+                        <p class="mx-2 my-1">Comida gostosa sem taxas</p>
+                    </a>
                 </div>
             </div>
         </div>
-    </body>
-</html>
+    </div>
+
+    <div class="row my-5">
+        <div class="container">
+            <h2>Últimos restaurantes</h2>
+        </div>
+        <div class="container">
+            <div class="carousel-center my-5">
+                <div>
+                    <img class="rounded mx-auto d-blockl" src="http://placehold.it/350x100?text=1">
+                </div>
+                <div>
+                    <img class="rounded mx-auto d-blockl" src="http://placehold.it/350x100?text=2">
+                </div>
+                <div>
+                    <img class="rounded mx-auto d-blockl" src="http://placehold.it/350x100?text=3">
+                </div>
+                <div>
+                    <img class="rounded mx-auto d-blockl" src="http://placehold.it/350x100?text=4">
+                </div>
+                <div>
+                    <img class="rounded mx-auto d-blockl" src="http://placehold.it/350x100?text=5">
+                </div>
+                <div>
+                    <img class="rounded mx-auto d-blockl" src="http://placehold.it/350x100?text=6">
+                </div>
+                <div>
+                    <img class="rounded mx-auto d-blockl" src="http://placehold.it/350x100?text=7">
+                </div>
+                <div>
+                    <img class="rounded mx-auto d-blockl" src="http://placehold.it/350x100?text=8">
+                </div>
+                <div>
+                    <img class="rounded mx-auto d-blockl" src="http://placehold.it/350x100?text=9">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row my-5">
+        <div class="container">
+            <h2>Categorias</h2>
+        </div>
+        <div class="container">
+            <div class="carousel-category my-5">
+                <div>
+                    <img class="rounded-circle mx-auto d-blockl" src="http://placehold.it/100x100?text=1">
+                </div>
+                <div>
+                    <img class="rounded-circle mx-auto d-blockl" src="http://placehold.it/100x100?text=2">
+                </div>
+                <div>
+                    <img class="rounded-circle mx-auto d-blockl" src="http://placehold.it/100x100?text=3">
+                </div>
+                <div>
+                    <img class="rounded-circle mx-auto d-blockl" src="http://placehold.it/100x100?text=4">
+                </div>
+                <div>
+                    <img class="rounded-circle mx-auto d-blockl" src="http://placehold.it/100x100?text=5">
+                </div>
+                <div>
+                    <img class="rounded-circle mx-auto d-blockl" src="http://placehold.it/100x100?text=6">
+                </div>
+                <div>
+                    <img class="rounded-circle mx-auto d-blockl" src="http://placehold.it/100x100?text=7">
+                </div>
+                <div>
+                    <img class="rounded-circle mx-auto d-blockl" src="http://placehold.it/100x100?text=8">
+                </div>
+                <div>
+                    <img class="rounded-circle mx-auto d-blockl" src="http://placehold.it/100x100?text=9">
+                </div>
+                <div>
+                    <img class="rounded-circle mx-auto d-blockl" src="http://placehold.it/100x100?text=10">
+                </div>
+                <div>
+                    <img class="rounded-circle mx-auto d-blockl" src="http://placehold.it/100x100?text=11">
+                </div>
+                <div>
+                    <img class="rounded-circle mx-auto d-blockl" src="http://placehold.it/100x100?text=12">
+                </div>
+                <div>
+                    <img class="rounded-circle mx-auto d-blockl" src="http://placehold.it/100x100?text=13">
+                </div>
+                <div>
+                    <img class="rounded-circle mx-auto d-blockl" src="http://placehold.it/100x100?text=14">
+                </div>
+                <div>
+                    <img class="rounded-circle mx-auto d-blockl" src="http://placehold.it/100x100?text=15">
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="container">
+            <h2>Restaurantes</h2>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col col-sm-auto col-md-6 col-lg-4 col-xl-4">
+                    <div class="card">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <div class="mx-3 my-4 my-lg-5 my-xl-4">
+                                    <img class="img-fluid my-auto d-blockl card-img" src="https://via.placeholder.com/400x400.png?text=Image" alt="...">
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <h3 class="card-title text-truncate">Habib's - Abdias de Carvalho wwwwwwwwwwwwwww</h3>
+                                    </div>
+                                    <div class="row">
+                                        <p class="card-text">4.3 • Lanches • 0,9 km</p>
+                                        <p class="card-text">35-45 min •  Entrega R$ 8.90</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="stretched-link"></a>
+                    </div>
+                </div>
+                <div class="col col-sm-auto col-md-6 col-lg-4 col-xl-4">
+                    <div class="card">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <div class="mx-3 my-4 my-lg-5 my-xl-4">
+                                    <img class="img-fluid my-auto d-blockl card-img" src="https://via.placeholder.com/400x400.png?text=Image" alt="...">
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <h3 class="card-title text-truncate">Habib's - Abdias de Carvalho wwwwwwwwwwwwwww</h3>
+                                    </div>
+                                    <div class="row">
+                                        <p class="card-text">4.3 • Lanches • 0,9 km</p>
+                                        <p class="card-text">35-45 min •  Entrega R$ 8.90</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="stretched-link"></a>
+                    </div>
+                </div>
+                <div class="col col-sm-auto col-md-6 col-lg-4 col-xl-4">
+                    <div class="card">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <div class="mx-3 my-4 my-lg-5 my-xl-4">
+                                    <img class="img-fluid my-auto d-blockl card-img" src="https://via.placeholder.com/400x400.png?text=Image" alt="...">
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <h3 class="card-title text-truncate">Habib's - Abdias de Carvalho wwwwwwwwwwwwwww</h3>
+                                    </div>
+                                    <div class="row">
+                                        <p class="card-text">4.3 • Lanches • 0,9 km</p>
+                                        <p class="card-text">35-45 min •  Entrega R$ 8.90</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="stretched-link"></a>
+                    </div>
+                </div>
+                <div class="col col-sm-auto col-md-6 col-lg-4 col-xl-4">
+                    <div class="card">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <div class="mx-3 my-4 my-lg-5 my-xl-4">
+                                    <img class="img-fluid my-auto d-blockl card-img" src="https://via.placeholder.com/400x400.png?text=Image" alt="...">
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <h3 class="card-title text-truncate">Habib's - Abdias de Carvalho wwwwwwwwwwwwwww</h3>
+                                    </div>
+                                    <div class="row">
+                                        <p class="card-text">4.3 • Lanches • 0,9 km</p>
+                                        <p class="card-text">35-45 min •  Entrega R$ 8.90</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="stretched-link"></a>
+                    </div>
+                </div>
+                <div class="col col-sm-auto col-md-6 col-lg-4 col-xl-4">
+                    <div class="card">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <div class="mx-3 my-4 my-lg-5 my-xl-4">
+                                    <img class="img-fluid my-auto d-blockl card-img" src="https://via.placeholder.com/400x400.png?text=Image" alt="...">
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <h3 class="card-title text-truncate">Habib's - Abdias de Carvalho wwwwwwwwwwwwwww</h3>
+                                    </div>
+                                    <div class="row">
+                                        <p class="card-text">4.3 • Lanches • 0,9 km</p>
+                                        <p class="card-text">35-45 min •  Entrega R$ 8.90</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="stretched-link"></a>
+                    </div>
+                </div>
+                <div class="col col-sm-auto col-md-6 col-lg-4 col-xl-4">
+                    <div class="card">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <div class="mx-3 my-4 my-lg-5 my-xl-4">
+                                    <img class="img-fluid my-auto d-blockl card-img" src="https://via.placeholder.com/400x400.png?text=Image" alt="...">
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <h3 class="card-title text-truncate">Habib's - Abdias de Carvalho wwwwwwwwwwwwwww</h3>
+                                    </div>
+                                    <div class="row">
+                                        <p class="card-text">4.3 • Lanches • 0,9 km</p>
+                                        <p class="card-text">35-45 min •  Entrega R$ 8.90</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="stretched-link"></a>
+                    </div>
+                </div>
+                <div class="col col-sm-auto col-md-6 col-lg-4 col-xl-4">
+                    <div class="card">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <div class="mx-3 my-4 my-lg-5 my-xl-4">
+                                    <img class="img-fluid my-auto d-blockl card-img" src="https://via.placeholder.com/400x400.png?text=Image" alt="...">
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <h3 class="card-title text-truncate">Habib's - Abdias de Carvalho wwwwwwwwwwwwwww</h3>
+                                    </div>
+                                    <div class="row">
+                                        <p class="card-text">4.3 • Lanches • 0,9 km</p>
+                                        <p class="card-text">35-45 min •  Entrega R$ 8.90</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="stretched-link"></a>
+                    </div>
+                </div>
+                <div class="col col-sm-auto col-md-6 col-lg-4 col-xl-4">
+                    <div class="card">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <div class="mx-3 my-4 my-lg-5 my-xl-4">
+                                    <img class="img-fluid my-auto d-blockl card-img" src="https://via.placeholder.com/400x400.png?text=Image" alt="...">
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <h3 class="card-title text-truncate">Habib's - Abdias de Carvalho wwwwwwwwwwwwwww</h3>
+                                    </div>
+                                    <div class="row">
+                                        <p class="card-text">4.3 • Lanches • 0,9 km</p>
+                                        <p class="card-text">35-45 min •  Entrega R$ 8.90</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="stretched-link"></a>
+                    </div>
+                </div>
+                <div class="col col-sm-auto col-md-6 col-lg-4 col-xl-4">
+                    <div class="card">
+                        <div class="row no-gutters">
+                            <div class="col-4">
+                                <div class="mx-3 my-4 my-lg-5 my-xl-4">
+                                    <img class="img-fluid my-auto d-blockl card-img" src="https://via.placeholder.com/400x400.png?text=Image" alt="...">
+                                </div>
+                            </div>
+                            <div class="col-8">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <h3 class="card-title text-truncate">Habib's - Abdias de Carvalho wwwwwwwwwwwwwww</h3>
+                                    </div>
+                                    <div class="row">
+                                        <p class="card-text">4.3 • Lanches • 0,9 km</p>
+                                        <p class="card-text">35-45 min •  Entrega R$ 8.90</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="stretched-link"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="container my-4">
+                    <button class="btn btn-default btn-lg btn-block border">Ver mais Restaurantes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection

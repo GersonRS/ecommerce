@@ -1,0 +1,10 @@
+version: '2.1'
+
+services:
+  ecommerce2:
+    image: ecommerce2
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 80:80
